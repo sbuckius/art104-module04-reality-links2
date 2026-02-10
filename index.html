@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Technologies - Organized by Type</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 2px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #495057;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: white;
+            border: 2px solid #dee2e6;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .tech-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            border-left: 6px solid #667eea;
+        }
+
+        .tech-section h2 {
+            color: #1e3c72;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tech-section .icon {
+            font-size: 1.2em;
+        }
+
+        .tech-section .description {
+            color: #6c757d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .subsection {
+            margin-bottom: 40px;
+        }
+
+        .subsection h3 {
+            color: #2a5298;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .resource-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .resource-card .type-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .badge-wiki {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-artwork {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .badge-article {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .badge-hardware {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .resource-card h4 {
+            color: #1e3c72;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .resource-card .artist {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #495057;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .resource-links a {
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+
+        .resource-links a:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .themes-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .themes-box h3 {
+            color: #c7502d;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .themes-box p {
+            color: #5a3825;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffecd2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .tech-section {
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Reality Technologies - Organized by Type</h1>
+            <p>Explore VR, AR, MR, Simulations, Video Games & More</p>
+           <p>Sarah gathered the links but AI compiled the page, so there could be errors</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#vr">Virtual Reality</a></li>
+                <li><a href="#ar">Augmented Reality</a></li>
+                <li><a href="#mr">Mixed Reality</a></li>
+                <li><a href="#games">Video Games</a></li>
+                <li><a href="#simulations">Simulations</a></li>
+                <li><a href="#immersive">Immersive Tech</a></li>
+                <li><a href="#themes">Key Themes</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- Themes Section -->
+            <div class="themes-box" id="themes">
+                <h3>🎨 Research Themes & Topics</h3>
+                <p>
+                    <strong>Core Areas:</strong> Privacy • Surveillance • Augmented Reality • Mixed Reality • Virtual Reality • Surrealism • Real Time Systems • Real-Time Virtual/Real Space • Fiction/Non-fiction • Video Games • Physical Computing • Quantum Mechanics • Digital Simulations • Social Construction of Reality • Mediated Reality • Technological Sublime • Simulacra • AI & Reality
+                </p>
+                <p style="margin-top: 15px;">
+                    📖 <strong>Reference Book:</strong> <a href="https://books.google.com/books?id=46K7EAAAQBAJ&printsec=frontcover#v=onepage&q&f=false" style="color: #2d5016; font-weight: bold; text-decoration: underline;">Digital Art - Google Books</a>
+                </p>
+            </div>
+
+            <!-- VIRTUAL REALITY SECTION -->
+            <div class="tech-section" id="vr">
+                <h2><span class="icon">🥽</span> Virtual Reality (VR)</h2>
+                <div class="description">
+                    Fully immersive digital environments that create a complete sense of presence in computer-generated worlds. VR replaces the physical world with a simulated one through head-mounted displays and other immersive technologies.
+                </div>
+
+                <!-- VR Core Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core VR Concepts & Technologies</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Virtual Reality (VR)</h4>
+                            <p>Fully immersive digital environments</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Virtual_reality" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Immersion (Virtual Reality)</h4>
+                            <p>Sense of "being there" in a virtual world</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Immersion_%28virtual_reality%29" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Cinematic Virtual Reality</h4>
+                            <p>Narrative immersive 360 video experiences</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Cinematic_virtual_reality" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>360-Degree Video</h4>
+                            <p>Immersive spherical video recordings</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/360-degree_video" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>CAVE (Cave Automatic Virtual Environment)</h4>
+                            <p>Room-scale immersive environment</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Cave_automatic_virtual_environment" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VR Hardware -->
+                <div class="subsection">
+                    <h3>🎧 VR Hardware & Headsets</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Meta Quest Line</h4>
+                            <p>Line of standalone VR headsets (formerly Oculus Quest)</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Meta_Quest" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Meta Quest Pro</h4>
+                            <p>High-end mixed reality/VR headset by Meta</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Meta_Quest_Pro" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Meta Quest 2</h4>
+                            <p>Popular standalone VR headset by Meta</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Quest_2" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Oculus Go</h4>
+                            <p>Early standalone VR headset in Meta's ecosystem</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Oculus_Go" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>PlayStation VR (PS VR)</h4>
+                            <p>Sony's virtual reality system for PlayStation consoles</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/PlayStation_VR" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Steam Frame</h4>
+                            <p>Upcoming dedicated VR headset from Valve</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Steam_Frame" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Samsung Gear VR</h4>
+                            <p>Mobile VR headset using Samsung smartphones</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Samsung_Gear_VR" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VR Artworks -->
+                <div class="subsection">
+                    <h3>🎨 VR Artworks & Installations</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Osmose</h4>
+                            <p class="artist">Charlotte Davies</p>
+                            <div class="resource-links">
+                                <a href="https://www.immersence.com/osmose/" target="_blank">Immersence</a>
+                                <a href="http://www.medienkunstnetz.de/works/osmose/" target="_blank">Media Art Net</a>
+                                <a href="https://www.fondation-langlois.org/html/e/page.php?NumPage=103" target="_blank">Fondation Langlois</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Memory Theater VR</h4>
+                            <p class="artist">Agnes Hegedus</p>
+                            <div class="resource-links">
+                                <a href="http://www.medienkunstnetz.de/works/memory-theater-vr/" target="_blank">Media Art Net</a>
+                                <a href="https://widok5.wrocenter.pl/en/hegedus/" target="_blank">Wrocenter</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>ConFIGURING the CAVE</h4>
+                            <p class="artist">Agnes Hegedus, Bernd Lintermann, Jeffrey Shaw</p>
+                            <div class="resource-links">
+                                <a href="https://www.ntticc.or.jp/en/archive/works/configuring-the-cave/" target="_blank">NTT ICC</a>
+                                <a href="https://artsandculture.google.com/asset/configuring-the-cave-an-immersive-installation-for-the-cave-jeffrey-shaw/rQGkBDQp5FmhcA?hl=en" target="_blank">Google Arts</a>
+                                <a href="https://isea-archives.siggraph.org/art-events/agnes-hegedus-jeffrey-shaw-bernd-lintermann-configuring-the-cave/" target="_blank">ISEA</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Beyond Manzanar</h4>
+                            <p class="artist">Tamiko Thiel, Zara Houshmand</p>
+                            <div class="resource-links">
+                                <a href="https://zarahoushmand.com/beyond-manzanar/" target="_blank">Zara Houshmand</a>
+                                <a href="https://sjmusart.org/event/creative-minds-tamiko-thiel-and-zara-houshmand-susan-hayase" target="_blank">SJMA</a>
+                                <a href="https://digitalartarchive.siggraph.org/artwork/tamiko-thiel-beyond-manzanar/" target="_blank">SIGGRAPH</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Recreational Vehicle in Virtual Reality</h4>
+                            <p class="artist">Peter D'Agostino</p>
+                            <div class="resource-links">
+                                <a href="https://www.eai.org/titles/vr-rv-a-recreational-vehicle-in-virtual-reality" target="_blank">EAI</a>
+                                <a href="http://peterdagostino.com/VRRV.html" target="_blank">Peter D'Agostino</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>AQUAPHOBIA, RE-ANIMATED</h4>
+                            <p class="artist">Jakob Kudsk Steensen</p>
+                            <div class="resource-links">
+                                <a href="http://www.jakobsteensen.com/re-animated" target="_blank">Re-Animated</a>
+                                <a href="https://kadist.org/work/re-animated/" target="_blank">Kadist</a>
+                                <a href="http://www.jakobsteensen.com/aquaphobia" target="_blank">Aquaphobia</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Bodyless</h4>
+                            <p class="artist">Hsin-Chien Huang</p>
+                            <div class="resource-links">
+                                <a href="https://hsinchienhuang.com/pix/_3artworks/i_bodyless/p0.php?lang=en" target="_blank">Artist Site</a>
+                                <a href="https://www.labiennale.org/en/cinema/2019/venice-virtual-reality/bodyless" target="_blank">Venice Biennale</a>
+                                <a href="https://ars.electronica.art/who-owns-the-truth/en/bodyless/" target="_blank">Ars Electronica</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>The Sky is a Gap</h4>
+                            <p class="artist">Rachel Rossin</p>
+                            <div class="resource-links">
+                                <a href="https://www.daffylondon.com/portfolio/rachel-rossin-the-sky-is-a-gap-w-expl" target="_blank">Daffy London</a>
+                                <a href="https://www.artforum.com/features/rachel-rossin-236231/" target="_blank">Artforum</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VR Articles -->
+                <div class="subsection">
+                    <h3>📄 VR Research & Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Virtual Venice: Immersive Media and the Preservation of Historical Experience</h4>
+                            <div class="resource-links">
+                                <a href="https://dahj.org/article/virtual-venice" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>How Virtual Reality Technology Has Changed Our Lives</h4>
+                            <div class="resource-links">
+                                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9517547/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Where VR Gaming Took a Wrong Turn</h4>
+                            <div class="resource-links">
+                                <a href="https://spectrum.ieee.org/vr-games" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Immersive Virtual Reality for Digital Media Making: Transmediation is Key</h4>
+                            <div class="resource-links">
+                                <a href="https://www.tandfonline.com/doi/full/10.1080/17439884.2021.1952428#abstract" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Paradox of Interactive Media: VR as Tools for Violence Prevention</h4>
+                            <div class="resource-links">
+                                <a href="https://www.frontiersin.org/journals/communication/articles/10.3389/fcomm.2020.580965/full" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>VR Games and Body Involvement in Enhancing Positive Emotions</h4>
+                            <div class="resource-links">
+                                <a href="https://games.jmir.org/2020/2/e15635/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Contemporary Art and Virtual Reality: New Conditions of Viewership</h4>
+                            <div class="resource-links">
+                                <a href="https://cinergie.unibo.it/article/view/12322/13022" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Impact of VR Technology on Digital Media (Big Data & AI Context)</h4>
+                            <div class="resource-links">
+                                <a href="https://dl.acm.org/doi/10.3233/JCM-226611" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Tracing Physical Behavior in Virtual Reality (Social Psychology)</h4>
+                            <div class="resource-links">
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022103119300332" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Coextensive Space: VR and the Body-Digital-Physical Relationship</h4>
+                            <div class="resource-links">
+                                <a href="https://journals.sagepub.com/doi/full/10.1177/0163443720932498" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Virtual Villages Helping Digital Nomads Find Real-World Friends</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/virtual-villages-for-digital-nomads/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Metaverse Was Supposed to Be Your New Office. You're Still on Zoom</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/metaverse-virtual-reality-office-work-slow-growth/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUGMENTED REALITY SECTION -->
+            <div class="tech-section" id="ar">
+                <h2><span class="icon">📱</span> Augmented Reality (AR)</h2>
+                <div class="description">
+                    Technology that overlays virtual content onto the real world, enhancing physical environments with digital information, objects, and interactive elements visible through devices like smartphones, tablets, or AR glasses.
+                </div>
+
+                <!-- AR Core Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core AR Concepts</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Augmented Reality (AR)</h4>
+                            <p>Overlays virtual content onto the real world</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Augmented_reality" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Projection Mapping</h4>
+                            <p>Project visuals onto physical objects & environments</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Projection_mapping" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AR Artworks -->
+                <div class="subsection">
+                    <h3>🎨 AR Artworks & Installations</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>SFMOMA AR Expansion</h4>
+                            <p class="artist">Will Pappenheimer, John Craig Freeman</p>
+                            <div class="resource-links">
+                                <a href="http://www.willpap-projects.com/SFMOMA_AR/SFMOMA_AR.html" target="_blank">Will Pap Projects</a>
+                                <a href="http://www.willpap-projects.com/SFMOMA_AR/images/SFMOMA_An%20Expanded%20Building_Augmented%20Reality_App.pdf" target="_blank">PDF</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Shades of Absence</h4>
+                            <p class="artist">Tamiko Thiel</p>
+                            <div class="resource-links">
+                                <a href="https://tamikothiel.com/AR/shades-of-absence.html" target="_blank">Shades of Absence</a>
+                                <a href="https://www.tamikothiel.com/" target="_blank">Tamiko Thiel</a>
+                                <a href="https://arts.mit.edu/tamiko-thiel/" target="_blank">MIT Arts</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Border Memorial: Frontera de los Muertos</h4>
+                            <p class="artist">John Craig Freeman, Mark Skwarek</p>
+                            <div class="resource-links">
+                                <a href="https://www.google.com/books/edition/Digital_Art_Fourth_World_of_Art/hEy6EAAAQBAJ?hl=en&gbpv=1&dq=John+Craig+Freeman,+Mark+Skwarek%09Border+Memorial:+Frontera+de+los+Muertos&pg=PA96&printsec=frontcover" target="_blank">Digital Art Book</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Liberty Bell</h4>
+                            <p class="artist">Nancy Baker Cahill</p>
+                            <div class="resource-links">
+                                <a href="https://nancybakercahill.com/work/liberty-bell-3" target="_blank">Liberty Bell</a>
+                                <a href="https://www.associationforpublicart.org/project/nancy-baker-cahill-liberty-bell/" target="_blank">Association for Public Art</a>
+                                <a href="https://www.4thwallapp.org/liberty-bell" target="_blank">4th Wall App</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Margin of Error</h4>
+                            <p class="artist">Nancy Baker Cahill</p>
+                            <div class="resource-links">
+                                <a href="https://nancybakercahill.com/work/margin-of-error-vr-2" target="_blank">Margin of Error</a>
+                                <a href="https://nancybakercahill.com/work/desert-x-biennial-exhibition" target="_blank">Desert X</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Trade Eden</h4>
+                            <p class="artist">Cao Fei</p>
+                            <div class="resource-links">
+                                <a href="http://www.caofei.com/works.aspx?wtid=2" target="_blank">Cao Fei Works</a>
+                                <a href="https://www.apple.com/newsroom/2019/07/apple-offers-new-augmented-reality-art-sessions/" target="_blank">Apple Newsroom</a>
+                                <a href="https://www.guggenheim.org/teaching-materials/teaching-modern-and-contemporary-asian-art/cao-fei-%E6%9B%B9-%E6%96%90" target="_blank">Guggenheim</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Orators, Rostrums, and Propaganda Stands</h4>
+                            <p class="artist">John Craig Freeman</p>
+                            <div class="resource-links">
+                                <a href="https://johncraigfreeman.wordpress.com/orators/" target="_blank">John Craig Freeman</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AR Articles -->
+                <div class="subsection">
+                    <h3>📄 AR Research & Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Historical APPistemology: AR Apps as a Creative Tool</h4>
+                            <div class="resource-links">
+                                <a href="https://dahj.org/article/historical-appistemology" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Representing Early Modern Venice: AR Experiences in Exhibitions</h4>
+                            <div class="resource-links">
+                                <a href="https://dahj.org/article/representing-early-modern-venice" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Bridging the Digital and Physical: The Psychology of Augmented Reality</h4>
+                            <div class="resource-links">
+                                <a href="https://www.sciencedirect.com/science/article/pii/S2352250X24000551" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Social Interaction in Augmented Reality</h4>
+                            <div class="resource-links">
+                                <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0216290" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Application of Augmented Reality in Print Media</h4>
+                            <div class="resource-links">
+                                <a href="https://jpmtr.net/index.php/journal/article/view/65" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Augmented and Mixed Reality for Communities</h4>
+                            <div class="resource-links">
+                                <a href="https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.1201/9781003052838&type=googlepdf" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>An AR Program Can Help Patients Overcome Parkinson's Symptoms</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/lining-up-tech-to-help-banish-tremors-strolll-parkinsons/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIXED REALITY SECTION -->
+            <div class="tech-section" id="mr">
+                <h2><span class="icon">🔮</span> Mixed Reality (MR) & Extended Reality (XR)</h2>
+                <div class="description">
+                    The blending of physical and digital worlds where real and virtual objects co-exist and interact in real-time. XR is the umbrella term encompassing VR, AR, and MR technologies along the reality-virtuality continuum.
+                </div>
+
+                <!-- MR Core Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core MR/XR Concepts</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Extended Reality (XR)</h4>
+                            <p>Umbrella term for VR, AR, MR and related tech</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Extended_reality" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Mixed Reality (MR)</h4>
+                            <p>Blends real and virtual elements</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Reality%E2%80%93virtuality_continuum" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Reality-Virtuality Continuum</h4>
+                            <p>Framework showing the spectrum between physical reality and virtuality</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Reality%E2%80%93virtuality_continuum" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Metaverse</h4>
+                            <p>Shared virtual spaces using AR/VR</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Metaverse" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MR Hardware -->
+                <div class="subsection">
+                    <h3>🎧 MR Hardware & Headsets</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Apple Vision Pro</h4>
+                            <p>Mixed reality spatial computing headset from Apple</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Apple_Vision_Pro" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>Microsoft HoloLens</h4>
+                            <p>Augmented/mixed reality headset from Microsoft (enterprise focused)</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Microsoft_HoloLens" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-hardware">Hardware</span>
+                            <h4>HoloLens 2</h4>
+                            <p>Second-generation MR headset, successor to HoloLens</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/HoloLens_2" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MR Artworks -->
+                <div class="subsection">
+                    <h3>🎨 MR/XR Artworks</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Alice Unchained XR</h4>
+                            <p class="artist">Claudia Hart</p>
+                            <div class="resource-links">
+                                <a href="https://claudiahart.com/Alice-Unchained-XR-2018" target="_blank">Alice Unchained 2018</a>
+                                <a href="https://claudiahart.com/Alice-XR-2019" target="_blank">Alice XR 2019</a>
+                                <a href="https://bitforms.art/artwork/alice-unchained/" target="_blank">Bitforms</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Global Interior Project</h4>
+                            <p class="artist">Masaki Fujihata</p>
+                            <div class="resource-links">
+                                <a href="https://digitalartarchive.siggraph.org/artwork/masaki-fujihata-global-interior-project-networked-multi-user-virtual-environment-project/" target="_blank">SIGGRAPH</a>
+                                <a href="https://v2.nl/works/global-interior-project" target="_blank">V2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MR Articles -->
+                <div class="subsection">
+                    <h3>📄 MR/XR Research & Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Mixed Reality: The Interface of the Future</h4>
+                            <div class="resource-links">
+                                <a href="https://arxiv.org/pdf/2309.00819" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Seeing the World Through Digital Prisms: Psychological Implications of Passthrough Video</h4>
+                            <div class="resource-links">
+                                <a href="https://assets.pubpub.org/gb3z210x/tmb_tmb0000129-51719250557409.pdf" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>A Concise Analysis of VR and AR Technology Impact on Digital Media Art</h4>
+                            <div class="resource-links">
+                                <a href="https://www.sciencepublishinggroup.com/article/10.11648/j.ajad.20220704.17" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO GAMES SECTION -->
+            <div class="tech-section" id="games">
+                <h2><span class="icon">🎮</span> Video Games & Interactive Experiences</h2>
+                <div class="description">
+                    Interactive digital entertainment and art forms that engage players in virtual worlds through gameplay mechanics, narratives, and immersive experiences. Includes traditional games, art games, and alternate reality experiences.
+                </div>
+
+                <!-- Video Games Core Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core Gaming Concepts</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Video Game</h4>
+                            <p>Interactive digital games (2D, 3D, VR)</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Video_game" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Simulation Video Game</h4>
+                            <p>Games that mimic real-world systems</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Simulation_video_game" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Alternate Reality Game (ARG)</h4>
+                            <p>Real-world based narrative game experience</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Alternate_reality_game" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Transreality Game</h4>
+                            <p>Blends real and virtual game elements</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Transreality_game" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Game Engine</h4>
+                            <p>Software framework for building interactive worlds</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Video_game_engine" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Unity (Game Engine)</h4>
+                            <p>Real-time engine for AR/VR game & simulation development</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Unity_%28game_engine%29" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Unreal Engine</h4>
+                            <p>High-fidelity interactive 3D engine for games and simulations</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Unreal_Engine" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Game Artworks -->
+                <div class="subsection">
+                    <h3>🎨 Game-Based Artworks</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>The Intruder</h4>
+                            <p class="artist">Natalie Bookchin</p>
+                            <div class="resource-links">
+                                <a href="https://bookchin.net/projects/the-intruder/" target="_blank">Bookchin Projects</a>
+                                <a href="https://www.gamescenes.org/2011/10/art-game-natalie-bookchin-joncates-the-intruder-1999.html" target="_blank">Game Scenes</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Metapet</h4>
+                            <p class="artist">Natalie Bookchin</p>
+                            <div class="resource-links">
+                                <a href="https://bookchin.net/projects/metapet/" target="_blank">Bookchin Projects</a>
+                                <a href="https://creativetime.org/programs/archive/2003/MetaPet/metapet/" target="_blank">Creative Time</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Super Mario Clouds</h4>
+                            <p class="artist">Cory Arcangel</p>
+                            <div class="resource-links">
+                                <a href="https://whitney.org/collection/works/20588" target="_blank">Whitney</a>
+                                <a href="https://coryarcangel.com/things-i-made/2002-001-super-mario-clouds" target="_blank">Cory Arcangel</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>SOD</h4>
+                            <p class="artist">JODI</p>
+                            <div class="resource-links">
+                                <a href="https://sod.jodi.org/" target="_blank">SOD</a>
+                                <a href="https://www.ntticc.or.jp/en/archive/works/sod/" target="_blank">NTT ICC</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Q4U (Quake for You)</h4>
+                            <p class="artist">Feng Mengbo</p>
+                            <div class="resource-links">
+                                <a href="https://renaissancesociety.org/exhibitions/428/feng-mengbo-q4u/" target="_blank">Renaissance Society</a>
+                                <a href="https://neural.it/2002/01/q4u-videogame-art-reflective/" target="_blank">Neural</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Velvet-Strike</h4>
+                            <p class="artist">Anne-Marie Schleiner, Joan Leandre, Brody Condon</p>
+                            <div class="resource-links">
+                                <a href="https://anthology.rhizome.org/velvet-strike" target="_blank">Rhizome</a>
+                                <a href="https://brody.work/project/velvet-strike/" target="_blank">Brody Work</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Walden, a game</h4>
+                            <p class="artist">Tracy Fullerton</p>
+                            <div class="resource-links">
+                                <a href="https://www.tracyfullerton.com/projects#/walden/" target="_blank">Tracy Fullerton</a>
+                                <a href="https://www.waldengame.com/" target="_blank">Walden Game</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Everything</h4>
+                            <p class="artist">David OReilly</p>
+                            <div class="resource-links">
+                                <a href="https://www.davidoreilly.com/" target="_blank">David OReilly</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Can You See Me Now</h4>
+                            <p class="artist">Blast Theory</p>
+                            <div class="resource-links">
+                                <a href="https://www.blasttheory.co.uk/projects/can-you-see-me-now/" target="_blank">Blast Theory</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Game Articles -->
+                <div class="subsection">
+                    <h3>📄 Video Game Research & Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Video Games and the Technological Sublime</h4>
+                            <div class="resource-links">
+                                <a href="https://www.tate.org.uk/research/tate-papers/14/video-games-and-the-technological-sublime" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Video Games as Awareness Raisers, Attitude Changers, and Agents of Social Change</h4>
+                            <div class="resource-links">
+                                <a href="https://onlinelibrary.wiley.com/doi/10.1155/2024/3274715" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Future of Video Games Is ... Reality TV?</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/the-future-of-video-games-is-reality-tv/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>SimCity Isn't a Model of Reality. It's a Libertarian Toy Land</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/simcity-libertarian-toy-land/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIMULATIONS SECTION -->
+            <div class="tech-section" id="simulations">
+                <h2><span class="icon">⚙️</span> Simulations & Digital Twins</h2>
+                <div class="description">
+                    Computer-generated models that replicate real-world systems, processes, or environments for training, analysis, prediction, and understanding complex phenomena across science, medicine, engineering, and beyond.
+                </div>
+
+                <!-- Simulations Core Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core Simulation Concepts</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Simulator (General Concept)</h4>
+                            <p>Device that mimics real systems or processes</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Simulator" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Digital Twin</h4>
+                            <p>Virtual copy of a real system, used for simulation</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Digital_twin" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Physics Simulation</h4>
+                            <p>Computer modeling of physical systems</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Physical_simulation" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Scientific Simulation</h4>
+                            <p>Simulating complex scientific processes</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Scientific_simulation" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Simulation Hypothesis</h4>
+                            <p>Philosophical idea that reality may be a simulation</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Simulation_hypothesis" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specific Simulators -->
+                <div class="subsection">
+                    <h3>🎯 Specialized Simulators</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Flight Simulator</h4>
+                            <p>Training systems simulating aircraft control</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Flight_simulator" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Driving Simulator</h4>
+                            <p>Realistic driving environment simulation</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Driving_simulator" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Medical Simulation</h4>
+                            <p>Simulated clinical environments for healthcare training</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Medical_simulation" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Articles -->
+                <div class="subsection">
+                    <h3>📄 Simulation Research & Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Digital Simulations Open Up Real-World Possibilities</h4>
+                            <div class="resource-links">
+                                <a href="https://www.technologyreview.com/2023/04/04/1070684/digital-simulations-open-up-real-world-possibilities/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The New Era of Simulation</h4>
+                            <div class="resource-links">
+                                <a href="https://www.ucf.edu/pegasus/the-new-era-of-simulation/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Construction of Interactive VR Simulation Digital Media System</h4>
+                            <div class="resource-links">
+                                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9410964/#sec6" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Simulacra in the Age of Social Media: Baudrillard as the Prophet of Fake News</h4>
+                            <div class="resource-links">
+                                <a href="https://journals.sagepub.com/doi/10.1177/0196859920977154" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMMERSIVE TECH SECTION -->
+            <div class="tech-section" id="immersive">
+                <h2><span class="icon">🌊</span> Immersive Technologies & Environments</h2>
+                <div class="description">
+                    Technologies and techniques that create deeply engaging sensory experiences, including haptics, telepresence, holography, and spatial computing that blur the boundaries between physical and digital realms.
+                </div>
+
+                <!-- Immersive Tech Concepts -->
+                <div class="subsection">
+                    <h3>📘 Core Immersive Concepts</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Haptic Technology</h4>
+                            <p>Technology for tactile feedback</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Haptic_technology" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Haptic Suit</h4>
+                            <p>Wearable device providing bodily feedback</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Haptic_suit" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Telepresence</h4>
+                            <p>Experience of remote presence via technology</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Telepresence" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Holography</h4>
+                            <p>3D image capture and display technique</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Holography" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>Microsoft Holoportation</h4>
+                            <p>Real-time 3D telepresence capture technology</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/Microsoft_Holoportation" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-wiki">Wikipedia</span>
+                            <h4>On-Set Virtual Production</h4>
+                            <p>Real-time LED + game engine tech for filmmaking</p>
+                            <div class="resource-links">
+                                <a href="https://en.wikipedia.org/wiki/On-set_virtual_production" target="_blank">Wikipedia →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Immersive Artworks -->
+                <div class="subsection">
+                    <h3>🎨 Immersive Artworks & Installations</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>The Golden Calf</h4>
+                            <p class="artist">Jeffrey Shaw</p>
+                            <div class="resource-links">
+                                <a href="https://www.jeffreyshawcompendium.com/portfolio/golden-calf/" target="_blank">Jeffrey Shaw Compendium</a>
+                                <a href="https://leonardo.info/gallery/gallery332/shaw.html" target="_blank">Leonardo</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>The World Generator/The Engine of Desire</h4>
+                            <p class="artist">Bill Seaman & Gideon May</p>
+                            <div class="resource-links">
+                                <a href="https://billseaman.com/works/1997_world_generator.html" target="_blank">Bill Seaman</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Be Now Here</h4>
+                            <p class="artist">Michael Naimark</p>
+                            <div class="resource-links">
+                                <a href="http://www.naimark.net/projects/benowhere.html" target="_blank">Naimark Projects</a>
+                                <a href="http://www.medienkunstnetz.de/works/be-now-here/" target="_blank">Media Art Net</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Place: A User's Manual</h4>
+                            <p class="artist">Jeffrey Shaw</p>
+                            <div class="resource-links">
+                                <a href="https://www.jeffreyshawcompendium.com/portfolio/place-a-users-manual/" target="_blank">Jeffrey Shaw Compendium</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Hallucination</h4>
+                            <p class="artist">Jim Campbell</p>
+                            <div class="resource-links">
+                                <a href="http://www.jimcampbell.tv/portfolio/installations/hallucination/" target="_blank">Hallucination</a>
+                                <a href="https://www.jimcampbell.tv/portfolio/installations/interactive_hallucination/" target="_blank">Interactive Hallucination</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>EVE</h4>
+                            <p class="artist">Jeffrey Shaw</p>
+                            <div class="resource-links">
+                                <a href="https://www.jeffreyshawcompendium.com/platform/eve/" target="_blank">Jeffrey Shaw Compendium</a>
+                                <a href="http://www.medienkunstnetz.de/works/eve/" target="_blank">Media Art Net</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Ecosystem2</h4>
+                            <p class="artist">John Klima</p>
+                            <div class="resource-links">
+                                <a href="http://www.cityarts.com/lmno/ecosystm.html" target="_blank">City Arts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network & Digital Space Artworks -->
+                <div class="subsection">
+                    <h3>🌐 Network & Digital Space Artworks</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>10_DENCIES</h4>
+                            <p class="artist">Knowbotic Research</p>
+                            <div class="resource-links">
+                                <a href="http://krcf.knowbotiq.net/IODENS_SAOPAULO/1IOdencies.htm" target="_blank">Project Site</a>
+                                <a href="http://www.medienkunstnetz.de/works/io-dencies/" target="_blank">Media Art Net</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Empire 24/7</h4>
+                            <p class="artist">Wolfgang Staehle</p>
+                            <div class="resource-links">
+                                <a href="https://v2.nl/works/empire-24-7" target="_blank">V2 Works</a>
+                                <a href="http://www.medienkunstnetz.de/works/empire24-7/" target="_blank">Media Art Net</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Discrete Packets</h4>
+                            <p class="artist">Nick Crowe</p>
+                            <div class="resource-links">
+                                <a href="https://www.nickcrowe.net/works/discretepackets/discretepackets_3.html" target="_blank">Nick Crowe</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>CNN Interactive Just Got More Interactive</h4>
+                            <p class="artist">Thomson & Craighead</p>
+                            <div class="resource-links">
+                                <a href="https://www.thomson-craighead.net/cnndoc.html" target="_blank">Thomson & Craighead</a>
+                                <a href="https://v2.nl/works/cnn-interactive-just-got-more-interactive" target="_blank">V2</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>alpha 3.4</h4>
+                            <p class="artist">tsunamii.net</p>
+                            <div class="resource-links">
+                                <a href="https://anthology.rhizome.org/alpha-3-4" target="_blank">Rhizome</a>
+                                <a href="https://www.tsunamii.net/" target="_blank">Tsunamii.net</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>FlatEarth.io</h4>
+                            <p class="artist">Tabor Robak</p>
+                            <div class="resource-links">
+                                <a href="https://www.taborrobak.com/flatearth#" target="_blank">Tabor Robak</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>My Boyfriend Came Back from the War</h4>
+                            <p class="artist">Olia Lialina</p>
+                            <div class="resource-links">
+                                <a href="https://sites.rhizome.org/anthology/lialina.html" target="_blank">Rhizome</a>
+                                <a href="http://www.teleportacia.org/war/" target="_blank">Teleportacia</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Citizen Ex</h4>
+                            <p class="artist">James Bridle</p>
+                            <div class="resource-links">
+                                <a href="https://jamesbridle.com/works/citizen-ex" target="_blank">James Bridle</a>
+                                <a href="http://citizen-ex.com/" target="_blank">Citizen Ex</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Naked On Pluto</h4>
+                            <p class="artist">Dave Griffiths, Aymeric Mansoux, Marloes de Valk</p>
+                            <div class="resource-links">
+                                <a href="https://www.fact.co.uk/artwork/naked-on-pluto-2010" target="_blank">FACT</a>
+                                <a href="https://monoskop.org/Naked_on_Pluto" target="_blank">Monoskop</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virtual Worlds Artworks -->
+                <div class="subsection">
+                    <h3>🏝️ Virtual Worlds & Second Life Artworks</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>AVATARA</h4>
+                            <p class="artist">Donato Mancini, Jeremy Owen Turner</p>
+                            <div class="resource-links">
+                                <a href="https://www.intelligentagent.com/archive/IA3_2vrpaul.pdf" target="_blank">Intelligent Agent</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>13 Most Beautiful Avatars</h4>
+                            <p class="artist">Eva and Franco Mattes, 010010111</p>
+                            <div class="resource-links">
+                                <a href="https://0100101110101101.org/show-13-most-beautiful-avatars/" target="_blank">0100101110101101</a>
+                                <a href="https://rhizome.org/editorial/2006/dec/01/13-most-beautiful-avatars/" target="_blank">Rhizome</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>VF-VirtaFlaneurazine-SL</h4>
+                            <p class="artist">John Craig Freeman</p>
+                            <div class="resource-links">
+                                <a href="https://www.fringexhibitions.com/sept08b_2.html" target="_blank">Fringe Exhibitions</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Flack Attack</h4>
+                            <p class="artist">G+S (Simon Goldin and Jakob Senneby)</p>
+                            <div class="resource-links">
+                                <a href="https://goldinsenneby.com/practice/flack-attack/" target="_blank">Goldin + Senneby</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Second Life Dumpster</h4>
+                            <p class="artist">eteam (Hajoe Moderegger, Franziska Lamprecht)</p>
+                            <div class="resource-links">
+                                <a href="https://www.meineigenheim.org/portfolio/?p=106" target="_blank">Mein Eigenheim</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Reenactments</h4>
+                            <p class="artist">Eva and Franco Mattes, 010010111</p>
+                            <div class="resource-links">
+                                <a href="https://0100101110101101.org/reenactment-of-gilbertgeorges-the-singing-sculpture/" target="_blank">Singing Sculpture</a>
+                                <a href="https://0100101110101101.org/press/2007-07_Nothing_is_real.html" target="_blank">Nothing is Real</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Spawn of the Surreal</h4>
+                            <p class="artist">Second Front</p>
+                            <div class="resource-links">
+                                <a href="https://www.secondfront.org/Performances/Spawn_Surreal.html" target="_blank">Second Front</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-artwork">Artwork</span>
+                            <h4>Imagining Place SL: The U.S./Mexico Border</h4>
+                            <p class="artist">John Craig Freeman</p>
+                            <div class="resource-links">
+                                <a href="https://johncraigfreeman.wordpress.com/imaging-place/imaging-the-u-s-mexico-border/" target="_blank">Imaging Border</a>
+                                <a href="http://www.rhizomes.net/issue18/freeman/index.html" target="_blank">Rhizomes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cross-Cutting Articles -->
+                <div class="subsection">
+                    <h3>📄 Digital Media & Reality Articles</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Media and the Social Construction of Reality</h4>
+                            <div class="resource-links">
+                                <a href="https://books.google.com/books?hl=en&lr=&id=JgKEEAAAQBAJ&oi=fnd&pg=PA27&dq=reality+digital+media+academic+articles&ots=Vo09zokphZ&sig=ZSwkHd9ydBL-UAs4Q__hUJxZyx0#v=onepage&q=reality%20digital%20media%20academic%20articles&f=false" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>A Virtual Life: How Social Media Changes Our Perceptions</h4>
+                            <div class="resource-links">
+                                <a href="https://www.thechicagoschool.edu/insight/from-the-magazine/a-virtual-life/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Media Technologies and Digitally Mediated Reality</h4>
+                            <div class="resource-links">
+                                <a href="https://www.researchgate.net/publication/361240999_Media_Technologies_and_Digitally_Mediated_Reality_A_Study_on_Emerging_Trends_in_Content_Development_and_Manipulation_in_News_Media_Communication_and_Media_Studies" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>A Multidimensional Approach for Evaluating Reality in Social Media</h4>
+                            <div class="resource-links">
+                                <a href="https://www.jmir.org/2024/1/e52058" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Arguing for Media Psychology as a Distinct Field</h4>
+                            <div class="resource-links">
+                                <a href="https://books.google.com/books?hl=en&lr=&id=NB7YNxOVRjgC&oi=fnd&pg=PA43&dq=mixed+reality+digital+media+academic+articles+psychology+sociology&ots=W423ngZx8z&sig=VUaIgrfJh2MlJ3rnueI18iTXL7s#v=onepage&q=mixed%20reality%20digital%20media%20academic%20articles%20psychology%20sociology&f=false" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Digital Visions: The Experience of Self and Others in the Digital Revolution</h4>
+                            <div class="resource-links">
+                                <a href="https://www.tandfonline.com/doi/full/10.1080/09540261.2024.2355281#abstract" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The Google Pixel 9's AI Camera Features Let You Reshape Reality</h4>
+                            <div class="resource-links">
+                                <a href="https://www.wired.com/story/all-the-new-generative-ai-camera-features-in-google-pixel-9-phones/" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Study Finds Consumers Are Actively Turned Off by Products That Use AI</h4>
+                            <div class="resource-links">
+                                <a href="https://futurism.com/the-byte/study-consumers-turned-off-products-ai" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>Skechers Refuses to Comment on Ad With Signs of Lazy AI</h4>
+                            <div class="resource-links">
+                                <a href="https://futurism.com/the-byte/skechers-ad-signs-lazy-ai" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="type-badge badge-article">Article</span>
+                            <h4>The CIA Is Quietly Using AI to Build Emulated Versions of World Leaders</h4>
+                            <div class="resource-links">
+                                <a href="https://futurism.com/the-byte/cia-ai-chatbots-leaders" target="_blank">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🌐 Reality Technologies Resource Collection - Organized by Technology Type</p>
+            <p>A comprehensive guide to VR, AR, MR, Video Games, Simulations & Immersive Experiences</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Created February 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
